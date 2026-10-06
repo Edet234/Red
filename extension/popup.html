@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body { width: 300px; margin: 0; font-family: system-ui, sans-serif; background: #0D1321; color: #fff; }
+  .wrap { padding: 16px; }
+  h1 { font-size: 15px; margin: 0 0 2px; }
+  p { font-size: 12px; color: #ffffff99; margin: 4px 0 10px; }
+  input { width: 100%; box-sizing: border-box; padding: 10px; border-radius: 10px; border: 1px solid #ffffff2a; background: #00000088; color: #FFC531; font-family: monospace; font-weight: 800; letter-spacing: .12em; text-align: center; }
+  button { width: 100%; margin-top: 8px; padding: 11px; border: 0; border-radius: 10px; font-weight: 800; cursor: pointer; }
+  .save { background: #FF3D5A; color: #fff; }
+  .test { background: #ffffff14; color: #fff; border: 1px solid #ffffff22; }
+  #status { font-size: 11px; margin-top: 8px; min-height: 16px; color: #34F5C5; }
+  code { font-size: 10px; color: #ffffff66; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📡 Spribe Sensor</h1>
+  <p>Paste the <b>Operator Code</b> from your Spribe-OS dashboard. The sensor pushes live ticks there.</p>
+  <input id="code" placeholder="XXXX-XXXX-XXXX" />
+  <input id="bridge" style="margin-top:8px;color:#fff" placeholder="Bridge URL (https://…)" />
+  <button class="save" id="save">Link sensor</button>
+  <button class="test" id="test">Test connection</button>
+  <div id="status"></div>
+  <code id="last"></code>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

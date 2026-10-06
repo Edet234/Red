@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Spribe Sensor — Aviator Intelligence",
+  "version": "1.0.0",
+  "description": "Sniffs the live Spribe gateway (multiplier + crash point) and pushes it to your Spribe-OS Bridge.",
+  "permissions": ["storage", "tabs", "scripting", "webRequest"],
+  "host_permissions": ["https://*/*", "http://*/*", "wss://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Spribe Sensor" },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [{ "resources": ["injected.js"], "matches": ["https://*/*", "http://*/*"] }]
+}
